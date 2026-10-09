@@ -1,7 +1,7 @@
 {
   "Rules": [
     {
-      "ID": "raw-data-lifecycle",
+      "ID": "sensor-data-retention",
       "Status": "Enabled",
       "Filter": {
         "Prefix": "raw/"

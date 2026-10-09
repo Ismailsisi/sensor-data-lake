@@ -8,9 +8,9 @@ This repository contains AWS CLI scripts and configuration files used to provisi
 
 ## Repository Structure
 
-* scripts/ — AWS CLI provisioning scripts
-* config/ — S3 lifecycle and related configuration
-* sample-data/ — small example sensor datasets
+* `scripts/` — AWS CLI provisioning scripts
+* `config/` — S3 lifecycle and related configuration
+* `sample-data/` — small example sensor datasets
 
 ## Provisioning
 
@@ -18,7 +18,7 @@ Git and AWS CLI version 2 are prerequisites.
 
 The default AWS CLI profile is `training`.
 
-The provisioning script is run with:
+Run the provisioning script with:
 
 ```bash
 ./scripts/create_s3_data_lake.sh
@@ -26,7 +26,7 @@ The provisioning script is run with:
 
 ## Lifecycle
 
-Objects under the `raw/` prefix transition to Standard-IA after 30 days and Glacier Flexible Retrieval after 180 days.
+Objects under the `raw/` prefix are configured to transition to Standard-IA after 30 days and Glacier Flexible Retrieval after 180 days.
 
 The training expiration is approximately seven years.
 
@@ -34,5 +34,5 @@ The training expiration is approximately seven years.
 
 AWS credentials and private SSH keys must never be committed to this repository.
 
-S3 Block Public Access is enabled.
+The provisioning script is designed to enable S3 Block Public Access. The actual bucket configuration remains to be verified.
 
